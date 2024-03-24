@@ -10,6 +10,15 @@ const getRandOperator = () => {
   return operators[randomIndex];
 };
 
+const getGcd = (num1, num2) => {
+  while (num2 !== 0) {
+    const temp = num2;
+    num2 = num1 % num2;
+    num1 = temp;
+  }
+  return num1;
+};
+
 const calcExp = (num1, operator, num2) => {
   switch (operator) {
     case '+':
@@ -36,6 +45,11 @@ const mainPlay2 = (name, correctAnswerCount) => {
   }
 };
 
-export { getRandNum, getRandOperator, calcExp, mainPlay1, mainPlay2 };
-
-
+export {
+  getRandNum,
+  getRandOperator,
+  calcExp,
+  mainPlay1,
+  mainPlay2,
+  getGcd 
+};
