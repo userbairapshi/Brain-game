@@ -1,0 +1,41 @@
+import readlineSync from 'readline-sync';
+
+const getRandNum = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+const getRandOperator = () => {
+  const operators = ['+', '-', '*'];
+  const randomIndex = Math.floor(Math.random() * operators.length);
+  return operators[randomIndex];
+};
+
+const calcExp = (num1, operator, num2) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      return NaN;
+  }
+};
+
+const mainPlay1 = () => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  return name;
+};
+
+const mainPlay2 = (name, correctAnswerCount) => {
+  if (correctAnswerCount === 3) {
+    console.log(`Congratulations, ${name}!`);
+  }
+};
+
+export { getRandNum, getRandOperator, calcExp, mainPlay1, mainPlay2 };
+
+
