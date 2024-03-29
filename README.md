@@ -6,3 +6,5 @@
 [![demo.cast](brain-calc)](https://asciinema.org/a/n8gz4W2XVJhbtp80sMi7c27Zx)
 
 [![demo.cast](brain-gcd)](https://asciinema.org/a/XD6bKLP7ebR5GPHYkryTKI5nO)
+
+[![demo.cast](brain-progression)](https://asciinema.org/a/6VlEAXLFK06YZ07aMsj7evCYg)

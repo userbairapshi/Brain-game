@@ -13,6 +13,7 @@ const maxCommonDivised = () => {
     console.log('Find the greatest common divisor of given numbers.');
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = getGcd(num1, num2).toString();
+
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {

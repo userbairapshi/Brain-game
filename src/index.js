@@ -4,6 +4,7 @@ const getRandNum = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+
 const getRandOperator = () => {
   const operators = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * operators.length);
@@ -45,11 +46,20 @@ const mainPlay2 = (name, correctAnswerCount) => {
   }
 };
 
+const arithmeticProgress = (num, dif, length) => {
+  let start = [];
+  for (let i = num; i < length; i += 1) {
+    start.push(num + dif * i);
+  }
+  return start;
+};
+
 export {
-  getRandNum,
+  arithmeticProgress,
   getRandOperator,
   calcExp,
   mainPlay1,
   mainPlay2,
-  getGcd 
+  getGcd,
+  getRandNum,
 };
