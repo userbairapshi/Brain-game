@@ -1,5 +1,10 @@
 import readlineSync from 'readline-sync';
-import { mainPlay1, mainPlay2, getRandNum, getGcd } from '../index.js';
+import {
+  mainPlay1,
+  mainPlay2,
+  getRandNum,
+  getGcd,
+} from '../index.js';
 
 const maxCommonDivised = () => {
   const name = mainPlay1();

@@ -4,16 +4,14 @@ import {
   mainPlay2,
   getRandNum,
   getRandOperator,
-  calcExp
-}
-from '../index.js';
+  calcExp,
+} from '../index.js';
 
 const playCalcGame = () => {
   const name = mainPlay1();
   let correctAnswerCount = 0;
 
   while (correctAnswerCount < 3) {
-
     const number1 = getRandNum(1, 100);
     const number2 = getRandNum(1, 100);
     const operator = getRandOperator();

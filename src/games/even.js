@@ -2,12 +2,10 @@ import readlineSync from 'readline-sync';
 import {
   mainPlay1,
   mainPlay2,
-  getRandNum
+  getRandNum,
 } from '../index.js';
 
-const isEven = (num) => {
-  return num % 2 === 0;
-};
+const isEven = (num) => num % 2 === 0;
 
 const playEvenGame = () => {
   const name = mainPlay1();
@@ -16,9 +14,8 @@ const playEvenGame = () => {
 
   while (correctAnswerCount < 3) {
     const number = getRandNum(1, 100);
-    console.log('Question: ' + number.toString());
+    console.log('Question: '`${number.toString()}`);
     const answer = readlineSync.question('Your answer: ');
-
     if ((isEven(number) && answer.toLowerCase() === 'yes') || (!isEven(number) && answer.toLowerCase() === 'no')) {
       console.log('Correct!');
       correctAnswerCount += 1;

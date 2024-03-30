@@ -1,9 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const getRandNum = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
+const getRandNum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 const getRandOperator = () => {
   const operators = ['+', '-', '*'];
@@ -47,11 +44,23 @@ const mainPlay2 = (name, correctAnswerCount) => {
 };
 
 const arithmeticProgress = (num, dif, length) => {
-  let start = [];
+  const start = [];
   for (let i = num; i < length; i += 1) {
     start.push(num + dif * i);
   }
   return start;
+};
+
+const isPrime = (number) => {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
 };
 
 export {
@@ -62,4 +71,5 @@ export {
   mainPlay2,
   getGcd,
   getRandNum,
+  isPrime,
 };

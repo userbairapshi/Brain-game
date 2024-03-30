@@ -2,7 +2,6 @@ import readlineSync from 'readline-sync';
 import { mainPlay1, getRandNum } from '../index.js';
 
 const generateProgression = (length, start, diff) => {
-
   const progression = [];
   for (let i = 0; i < length; i += 1) {
     progression.push(start + diff * i);
