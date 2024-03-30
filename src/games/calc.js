@@ -16,6 +16,7 @@ const playCalcGame = () => {
     const number2 = getRandNum(1, 100);
     const operator = getRandOperator();
     const expression = `${number1} ${operator} ${number2}`;
+    console.log('What is the result of the expression?');
     console.log('Question:', expression);
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = calcExp(number1, operator, number2);

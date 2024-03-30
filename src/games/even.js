@@ -15,7 +15,7 @@ const playEvenGame = () => {
   while (correctAnswerCount < 3) {
     const number = getRandNum(1, 100);
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    console.log(`Question:${number.toString()}`);
+    console.log(`Question: ${number.toString()}`);
     const answer = readlineSync.question('Your answer: ');
     if ((isEven(number) && answer.toLowerCase() === 'yes') || (!isEven(number) && answer.toLowerCase() === 'no')) {
       console.log('Correct!');
