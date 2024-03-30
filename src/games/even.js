@@ -9,12 +9,13 @@ const isEven = (num) => num % 2 === 0;
 
 const playEvenGame = () => {
   const name = mainPlay1();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
   let correctAnswerCount = 0;
 
   while (correctAnswerCount < 3) {
     const number = getRandNum(1, 100);
-    console.log('Question: '`${number.toString()}`);
+    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+    console.log(`Question:${number.toString()}`);
     const answer = readlineSync.question('Your answer: ');
     if ((isEven(number) && answer.toLowerCase() === 'yes') || (!isEven(number) && answer.toLowerCase() === 'no')) {
       console.log('Correct!');
