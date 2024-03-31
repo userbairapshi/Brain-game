@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
   mainPlay1,
+  mainPlay2,
   getRandNum,
 } from '../index.js';
 
@@ -24,7 +25,7 @@ const playEvenGame = () => {
       return;
     }
   }
-  mainPlay1(name, correctAnswerCount);
+  mainPlay2(name, correctAnswerCount);
 };
 
 export default playEvenGame;

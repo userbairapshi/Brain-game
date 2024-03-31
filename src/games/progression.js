@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { mainPlay1, getRandNum } from '../index.js';
+import { mainPlay1, mainPlay2, getRandNum } from '../index.js';
 
 const generateProgression = (length, start, diff) => {
   const progression = [];
@@ -35,7 +35,7 @@ const playProgressionGame = () => {
       return;
     }
   }
-  mainPlay1(name, correctAnswersCount);
+  mainPlay2(name, correctAnswersCount);
 };
 
 export default playProgressionGame;

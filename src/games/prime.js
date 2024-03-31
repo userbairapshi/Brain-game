@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
   mainPlay1,
+  mainPlay2,
   isPrime,
   getRandNum,
 } from '../index.js';
@@ -21,7 +22,7 @@ const primeNumber = () => {
     }
     console.log('Correct!');
   }
-  mainPlay1(name, correctAnswerCount);
+  mainPlay2(name, correctAnswerCount);
 };
 
 export default primeNumber;
