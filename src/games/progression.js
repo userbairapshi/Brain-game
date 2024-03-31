@@ -13,7 +13,6 @@ const playProgressionGame = () => {
   const name = mainPlay1();
   console.log('What number is missing in the progression?');
   let correctAnswersCount = 0;
-
   while (correctAnswersCount < 3) {
     const length = getRandNum(5, 10);
     const start = getRandNum(1, 10);

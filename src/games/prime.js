@@ -8,7 +8,6 @@ import {
 const primeNumber = () => {
   const name = mainPlay1();
   const correctAnswerCount = 0;
-
   while (correctAnswerCount < 3) {
     const questionNumber = getRandNum(1, 10);
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');

@@ -8,7 +8,6 @@ import {
 
 const maxCommonDivised = () => {
   const name = mainPlay1();
-
   const correctAnswerCount = 0;
   while (correctAnswerCount < 3) {
     const num1 = getRandNum(1, 100);

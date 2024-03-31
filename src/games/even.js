@@ -9,9 +9,7 @@ const isEven = (num) => num % 2 === 0;
 const playEvenGame = () => {
   const name = mainPlay1();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
   let correctAnswerCount = 0;
-
   while (correctAnswerCount < 3) {
     const number = getRandNum(1, 100);
     console.log(`Question: ${number.toString()}`);
