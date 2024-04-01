@@ -15,12 +15,14 @@ const primeNumber = () => {
     console.log(`Question: ${questionNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = isPrime(questionNumber) ? 'yes' : 'no';
-    if (userAnswer !== correctAnswer) {
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
+      correctAnswerCount += 1;
+    } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
+      return;
     }
-    console.log('Correct!');
-    correctAnswerCount += 1;
   }
   mainPlay2(name, correctAnswerCount);
 };

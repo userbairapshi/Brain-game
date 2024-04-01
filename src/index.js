@@ -51,16 +51,13 @@ const arithmeticProgress = (num, dif, length) => {
   return start;
 };
 
-const isPrime = (number) => {
-  if (number <= 1) {
-    return false;
-  }
-  for (let i = 2; i <= Math.sqrt(number); i += 1) {
-    if (number % i === 0) {
+const isPrime = (num) => {
+  for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i += 1) {
+    if (num % i === 0) {
       return false;
     }
   }
-  return true;
+  return num > 1;
 };
 
 export {
