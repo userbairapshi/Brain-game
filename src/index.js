@@ -9,12 +9,15 @@ const getRandOperator = () => {
 };
 
 const getGcd = (num1, num2) => {
-  while (num2 !== 0) {
-    const temp = num2;
-    num2 = num1 % num2;
-    num1 = temp;
+  let firstNum = num1;
+  let secondNum = num2;
+
+  while (secondNum !== 0) {
+    const temp = secondNum;
+    secondNum = firstNum % secondNum;
+    firstNum = temp;
   }
-  return num1;
+  return firstNum;
 };
 
 const calcExp = (num1, operator, num2) => {
