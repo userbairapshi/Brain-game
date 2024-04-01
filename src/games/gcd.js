@@ -8,7 +8,7 @@ import {
 
 const maxCommonDivised = () => {
   const name = mainPlay1();
-  const correctAnswerCount = 0;
+  let correctAnswerCount = 0;
   while (correctAnswerCount < 3) {
     const num1 = getRandNum(1, 100);
     const num2 = getRandNum(1, 100);
@@ -20,6 +20,7 @@ const maxCommonDivised = () => {
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
+      correctAnswerCount += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
