@@ -1,41 +1,36 @@
-import readlineSync from 'readline-sync';
-import { mainPlay1, mainPlay2, getRandNum } from '../index.js';
+import { mainGame } from '../index.js';
 
-const generateProgression = (length, start, diff) => {
+const generateProgression = (start, step, length) => {
   const progression = [];
+  let current = start;
   for (let i = 0; i < length; i += 1) {
-    progression.push(start + diff * i);
+    progression.push(current);
+    current += step;
   }
   return progression;
 };
 
+const hideElement = (array, index) => {
+  const hiddenArray = array.slice();
+  hiddenArray[index] = '..';
+  return hiddenArray.join(' ');
+};
+
+const rule = 'What number is missing in the progression?';
+
+const playRound = () => {
+  const start = Math.floor(Math.random() * 10);
+  const step = Math.floor(Math.random() * 10) + 1;
+  const length = Math.floor(Math.random() * 5) + 5;
+  const progression = generateProgression(start, step, length);
+  const hiddenIndex = Math.floor(Math.random() * length);
+  const question = hideElement(progression, hiddenIndex);
+  const correctAnswer = String(progression[hiddenIndex]);
+  return [question, correctAnswer];
+};
+
 const playProgressionGame = () => {
-  const name = mainPlay1();
-  console.log('What number is missing in the progression?');
-  let correctAnswersCount = 0;
-  while (correctAnswersCount < 3) {
-    const length = getRandNum(5, 10);
-    const start = getRandNum(1, 10);
-    const diff = getRandNum(2, 5);
-    const hiddenIndex = getRandNum(0, length - 1);
-
-    const progression = generateProgression(length, start, diff);
-    const correctAnswer = progression[hiddenIndex];
-    progression[hiddenIndex] = '..';
-
-    console.log(`Question: ${progression.join(' ')}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (parseInt(userAnswer, 10) === correctAnswer) {
-      console.log('Correct!');
-      correctAnswersCount += 1;
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-  }
-  mainPlay2(name, correctAnswersCount);
+  mainGame(rule, playRound);
 };
 
 export default playProgressionGame;

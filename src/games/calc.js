@@ -1,35 +1,40 @@
-import readlineSync from 'readline-sync';
 import {
-  mainPlay1,
-  mainPlay2,
+  mainGame,
   getRandNum,
-  getRandOperator,
-  calcExp,
 } from '../index.js';
 
-const playCalcGame = () => {
-  const name = mainPlay1();
-  let correctAnswerCount = 0;
-  while (correctAnswerCount < 3) {
-    const number1 = getRandNum(1, 100);
-    const number2 = getRandNum(1, 100);
-    const operator = getRandOperator();
-    const expression = `${number1} ${operator} ${number2}`;
-    console.log('What is the result of the expression?');
-    console.log('Question:', expression);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = calcExp(number1, operator, number2);
-
-    if (parseInt(userAnswer, 10) === correctAnswer) {
-      console.log('Correct!');
-      correctAnswerCount += 1;
-    } else {
-      console.log(`'${userAnswer}' is the wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
+const executeMathOperation = (num1, operator, num2) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      return NaN;
   }
-  mainPlay2(name, correctAnswerCount);
+};
+
+const getRandOperator = () => {
+  const operators = ['+', '-', '*'];
+  const randomIndex = Math.floor(Math.random() * operators.length);
+  return operators[randomIndex];
+};
+
+const rule = 'What is the result of the expression?';
+
+const playRound = () => {
+  const number1 = getRandNum(1, 100);
+  const number2 = getRandNum(1, 100);
+  const operator = getRandOperator();
+  const question = `${number1} ${operator} ${number2}`;
+  const correctAnswer = executeMathOperation(number1, operator, number2).toString();
+  return [question, correctAnswer];
+};
+
+const playCalcGame = () => {
+  mainGame(rule, playRound);
 };
 
 export default playCalcGame;

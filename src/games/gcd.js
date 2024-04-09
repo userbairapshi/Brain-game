@@ -1,33 +1,32 @@
-import readlineSync from 'readline-sync';
 import {
-  mainPlay1,
-  mainPlay2,
+  mainGame,
   getRandNum,
-  getGcd,
 } from '../index.js';
 
-const maxCommonDivised = () => {
-  const name = mainPlay1();
-  let correctAnswerCount = 0;
-  while (correctAnswerCount < 3) {
-    const num1 = getRandNum(1, 100);
-    const num2 = getRandNum(1, 100);
-    const expression = `${num1} ${num2}`;
-    console.log('Question:', expression);
-    console.log('Find the greatest common divisor of given numbers.');
-    const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = getGcd(num1, num2).toString();
+const getPrimeNumber = (num1, num2) => {
+  let firstNum = num1;
+  let secondNum = num2;
 
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      correctAnswerCount += 1;
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
+  while (secondNum !== 0) {
+    const temp = secondNum;
+    secondNum = firstNum % secondNum;
+    firstNum = temp;
   }
-  mainPlay2(name, correctAnswerCount);
+  return firstNum;
 };
 
-export default maxCommonDivised;
+const rule = 'Find the greatest common divisor of given numbers.';
+
+const playRound = () => {
+  const num1 = getRandNum(1, 100);
+  const num2 = getRandNum(1, 100);
+  const question = `${num1} ${num2}`;
+  const correctAnswer = getPrimeNumber(num1, num2).toString();
+  return [question, correctAnswer];
+};
+
+const playGcdGame = () => {
+  mainGame(rule, playRound);
+};
+
+export default playGcdGame;

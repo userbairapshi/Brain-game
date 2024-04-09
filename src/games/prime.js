@@ -1,30 +1,27 @@
-import readlineSync from 'readline-sync';
 import {
-  mainPlay1,
-  mainPlay2,
-  isPrime,
+  mainGame,
   getRandNum,
 } from '../index.js';
 
-const primeNumber = () => {
-  const name = mainPlay1();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  let correctAnswerCount = 0;
-  while (correctAnswerCount < 3) {
-    const questionNumber = getRandNum(1, 10);
-    console.log(`Question: ${questionNumber}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = isPrime(questionNumber) ? 'yes' : 'no';
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      correctAnswerCount += 1;
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
+const isPrime = (num) => {
+  for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i += 1) {
+    if (num % i === 0) {
+      return false;
     }
   }
-  mainPlay2(name, correctAnswerCount);
+  return num > 1;
 };
 
-export default primeNumber;
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const playRound = () => {
+  const question = getRandNum(1, 10);
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
+  return [question, correctAnswer];
+};
+
+const playPrimeGame = () => {
+  mainGame(rule, playRound);
+};
+
+export default playPrimeGame;
