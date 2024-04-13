@@ -27,34 +27,34 @@
 
 2. **Игра "brain-calc"**: решайте арифметические задачи.
 
-Демонстрация игрового процесса с успешным исходои игры.
+Демонстрация игрового процесса с успешным завершением игры.
 [![asciicast](https://asciinema.org/a/BHUtPhebKsbd7FI7a4xDnJNt3.svg)](https://asciinema.org/a/BHUtPhebKsbd7FI7a4xDnJNt3)
 
-демонстрация игрового процесса с неудачным исходои игры.
+Демонстрация игрового процесса с неудачным завершением игры.
 [![asciicast](https://asciinema.org/a/FKjFm2KGMlK71cOJsHyyf1RuS.svg)](https://asciinema.org/a/FKjFm2KGMlK71cOJsHyyf1RuS)
 
 3. **Игра "brain-gcd"**: найдите самый общий делитель двух чисел.
 
-Демонстрация игрового процесса с успешным исходои игры.
+Демонстрация игрового процесса с успешным завершением игры.
 [![asciicast](https://asciinema.org/a/B03vsuEjV6qsK4dr13EMFAdFk.svg)](https://asciinema.org/a/B03vsuEjV6qsK4dr13EMFAdFk)
 
-Демонстрация игрового процесса с неудачным исходои игры.
+Демонстрация игрового процесса с неудачным завершением игры.
 [![asciicast](https://asciinema.org/a/lj8TRwFY31Ro6mtqKYvA4jWVD.svg)](https://asciinema.org/a/lj8TRwFY31Ro6mtqKYvA4jWVD)
 
 4. **Игра "brain-progression"**: определите недостающее число в арифметической прогрессии.
 
-Демонстрация игрового процесса с успешным исходои игры.
+Демонстрация игрового процесса с успешным завершением игры.
 [![asciicast](https://asciinema.org/a/hpxGfTHhZMjW7dnzIkLg0AVLK.svg)](https://asciinema.org/a/hpxGfTHhZMjW7dnzIkLg0AVLK)
 
-Демонстрация игрового процесса с неудачным исходои игры.
+Демонстрация игрового процесса с неудачным завершением игры.
 [![asciicast](https://asciinema.org/a/juHV83lLedPdxYRBfJKapo9je.svg)](https://asciinema.org/a/juHV83lLedPdxYRBfJKapo9je)
 
 5. **Игра "brain-prime"**: проверьте, является ли случайное слово простым.
 
-Демонстрация игрового процесса с успешным исходои игры.
+Демонстрация игрового процесса с успешным завершением игры.
 [![asciicast](https://asciinema.org/a/kdRqp93a4Ea5uznho5bkK9Djs.svg)](https://asciinema.org/a/kdRqp93a4Ea5uznho5bkK9Djs)
 
-Демонстрация игрового процесса с неудачным исходои игры.
+Демонстрация игрового процесса с неудачным завершением игры.
 [![asciicast](https://asciinema.org/a/XFUyOUtCPE0tyRJSlItYWTshf.svg)](https://asciinema.org/a/XFUyOUtCPE0tyRJSlItYWTshf)
 
 Каждая игра обеспечивает ограниченное количество вопросов или задач для решения, и в зависимости от того, сколько из них будет решено правильно, определяется итоговая победа или поражение.
